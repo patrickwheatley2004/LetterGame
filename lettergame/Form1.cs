@@ -41,6 +41,8 @@ namespace lettergame
         {
             // ends the game.
             gameTime.Stop();
+            combo = 0;
+            points = 0;
             txtText.Enabled = false;
             MessageBox.Show("GAME OVER");
             btnClassic.Enabled = true;
@@ -218,8 +220,9 @@ namespace lettergame
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // loading
             txtText.Enabled = false;
-            updateSettings();
+            btnClassic_Click(sender, e);
         }
 
         private void gameTime_Tick(object sender, EventArgs e)
